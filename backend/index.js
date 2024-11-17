@@ -28,7 +28,9 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
-
+app.use("/",(req, res)=> {
+    res.send("server is running");
+})
 app.use('/api/users',userRouter)
 app.use('/api/posts',postRouter)
 // app.use('/chat', socketRouter);
