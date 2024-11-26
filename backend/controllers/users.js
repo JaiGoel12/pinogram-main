@@ -38,7 +38,7 @@ async function postUsers(req, res) {
       return res.status(400).send("Username already exists");
     }
 
-    const hashedPassword = await bcrypt.hash(password, 10); // 10 is the salt rounds
+    const hashedPassword = await bcrypt.hash(password, 10); 
 
     const result = new userModel({
       username,
